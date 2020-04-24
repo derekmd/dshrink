@@ -1,27 +1,58 @@
-This is the *.txt file for dshrink.
+===========================================================================
+Title                   : Dshrink v1.0
+Filename                : dshrink.exe
+Release date            : August 20, 1994
+Author                  : Rand Phares
 
-=====================
-DSHRINK - WHAT IS IT?
-=====================
+Description             : Dshrink is a program for removing redundant
+                          sidedefs from PWADS.  It turns out that PWADS
+                          don't need all the sidedefs they typically come
+                          with.
 
-Dshrink is a program for removing redundant sidedefs from PWADS.  It turns
-out that PWADS don't need all the sidedefs they typically come with.
-If two sidedefs in the same sector are identical, DOOM can just as easily
-paint both walls using either sidedef, making the other redundant.
+                          If two sidedefs in the same sector are identical,
+                          DOOM2 can just as easily paint both walls using
+                          either sidedef, making the other redundant.
 
-Dshrink greatly reduces the size of PWADS, typically removing over 50%
-of the sidedefs.  "The Ungathered", the eighth level of Cleimos,
-built with deu and run through wad_dwd and idbsp, weighs in at 300k before
-dshrink, and 244k after.  About 1850 sidedefs were redundant, thus removed.
+                          Dshrink greatly reduces the size of PWADS,
+                          typically removing over 50% of the sidedefs.  
 
-Also, since PWADS are examined dynamically as DOOM runs, smaller PWADS
-should mean a faster game.
+                          Also, since PWADS are examined dynamically as
+                          DOOM2 runs, smaller PWADS should mean a faster
+                          game.
 
-==============
-*** CAVEAT ***
-==============
+                          See below for usage instructions.
+Additional Credits to   : This 64-bit executable for Windows (MINGW64) was
+                          compiled and released by Derek "Afterglow"
+                          MacDonald. It is built from the v1.0 source code
+                          written by Rand in 1994. For help and support,
+                          please contact derekmd@hotmail.com. The initial
+                          32-bit DOS executable is still available,
+                          originally packaged with Doom episode replacement
+                          cleim10.zip.
 
-************** Dshrink's output is useless as input to a level editor.
+* Copyright / Permissions *
+
+Authors MAY use the contents of this file as a base for
+modification or reuse.  Permissions have been obtained from original
+authors for any of their resources modified or included in this file.
+
+You MAY distribute this file, provided you include this text
+file, with no modifications.  You may distribute this file in any
+electronic format (BBS, Diskette, CD, etc) as long as you include
+this file intact.  I have received permission from the original
+authors of any modified or included content in this file to allow
+further distribution.
+
+
+* Where to get the file that this text file describes *
+
+Web sites: https://www.github.com/derekmd/dshrink/releases for source code
+
+
+===========================================================================
+CAVEAT
+
+************** Dshrink's output is useless as input to most level editors.
 ************** The editor (deu in our case) reads the PWAD just fine, but
 ************** if you change a sidedef, any other linedefs using it will
 ************** inherit the change.  This makes editing very painful.
@@ -30,44 +61,19 @@ should mean a faster game.
 ************** RENAMING YOUR DSHRINK OUTPUT (TMP.WAD) TO THE NAME OF THE
 ************** INPUT FILE.  WE ARE NOT RESPONSIBLE FOR YOUR MISTAKES.
 
-==================
+===========================================================================
 HOW TO USE DSHRINK
-==================
 
-Dshrink was built using DJGPP (DJ's GCC port to DOS), and requires
-that GO32.exe is in the search path.  If you have GO32 already, you're
-set.  If not, a copy is included. 
+After you've done binary space partitioning on your level (bsp, idbsp, etc.)
+and assuming dshrink.exe is present in your working directory.
 
-After you've done binary space partitioning on your level (bsp, idbsp, etc.),
+     > dshrink <your_pwad_name>
 
-    (Assuming that dshrink.exe and go32.exe are present in your
-     working directory...)
-     
-     > set GO32TMP=c:\            /* only needed once per session */
-     > dshrink <your_pwad_name>   /* doesn't change your pwad     */
-
-This creates the file tmp.wad, which you can then play.  REMEMBER
-NOT TO RENAME IT BACK TO YOUR ORIGINAL PWAD NAME!  THIS WILL MAKE LEVEL
-EDITING A BIT PAINFUL!
-
-======
-SOURCE
-======
-
-Source is included in the file dshrink.c.
-
-=====
-NOTES
-=====
+This doesn't change your PWAD. It creates the file tmp.wad, which you can
+then play.  REMEMBER NOT TO RENAME IT BACK TO YOUR ORIGINAL PWAD NAME!
+THIS WILL MAKE LEVEL EDITING A BIT PAINFUL!
 
 1. This program is only to be used with wads designed to work with the
-   registered version of DOOM.
+   registered version of DOOM2.
 
-2. If you distribute dshrink, you must also distribute the original source
-   and this dshrink.txt file.
-
-3. DOOM is a registered trademark of id Software, Inc.
-
-4. If you have any problems with this program, please contact us at
-   phares@dg-rtp.dg.com.
-
+2. DOOM2 is a registered trademark of id Software, Inc.
